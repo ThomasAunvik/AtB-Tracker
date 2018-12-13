@@ -11,7 +11,7 @@
     <AssemblyName>AtB Tracker.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.16299.0</TargetPlatformVersion>
+    <TargetPlatformVersion>10.0.17763.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
@@ -143,15 +143,18 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.9" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.8055-pre1" />
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.0-preview1-26926-04" />
     <PackageReference Include="Xamarin.Forms.GoogleMaps">
       <Version>3.0.4</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\AtB Tracker\AtB Tracker.csproj">
-      <Project>{8dd54f4e-c84c-406b-898c-a64a2bf10d72}</Project>
+      <Project>{d52983cb-baa3-4e2e-b877-b8910360acaf}</Project>
       <Name>AtB Tracker</Name>
     </ProjectReference>
   </ItemGroup>

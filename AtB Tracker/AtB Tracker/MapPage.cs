@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Configuration;
 
 using Xamarin.Forms;
 using Xamarin;
@@ -28,12 +29,15 @@ namespace AtB_Tracker
             stack.Children.Add(map);
             Content = stack;
 
-            vmService = new VMServiceClient();
+            if (Environment.OSVersion.Platform != PlatformID.Win32NT)
+            {
+                vmService = new VMServiceClient("BasicHttpBinding_IVMService");
 
-            VehicleMonitoringDelivery[] answer = null;
-            ExtensionsStructure answerExtension = null;
-            BaseProducerResponse response = vmService.GetVehicleMonitoring(new ServiceRequestInfo(), new VehicleMonitoringRequest(), new ExtensionsStructure(), out answer, out answerExtension);
-            System.Diagnostics.Debug.WriteLine(response.Address);
+                VehicleMonitoringDelivery[] answer = null;
+                ExtensionsStructure answerExtension = null;
+                BaseProducerResponse response = vmService.GetVehicleMonitoring(new ServiceRequestInfo(), new VehicleMonitoringRequest(), new ExtensionsStructure(), out answer, out answerExtension);
+                System.Diagnostics.Debug.WriteLine(response.Address);
+            }
         }
     }
 }
